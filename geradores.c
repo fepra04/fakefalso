@@ -163,7 +163,7 @@ formata_cartao(int *n, char *cartao)
 }
 
 //
-// gera números de CEP incorretos pois não faltam dados sobre as subregiões,
+// gera números de CEP incorretos pois faltam dados sobre as subregiões,
 // setores, subsetores, divisores e identificadores de distribuição
 //
 int
