@@ -160,10 +160,8 @@ main(int argc, char **argv)
     // laço para função getopt() processar as opções da linha de comando
     // escrever funções para checar as opções 'b' e 'r'
     //
-    while ((opt = getopt(argc, argv, ":b:r:esu")) != -1)
-    {
-        switch (opt)                  
-        {
+    while ((opt = getopt(argc, argv, ":b:r:esu")) != -1) {
+        switch (opt) {
             case 'b':                    // enum credito
                 credito = atoi(optarg);
                 break;
@@ -228,8 +226,7 @@ main(int argc, char **argv)
     // imprimir a estrutura salva no arquivo "fake" se a opção "-u" foi 
     // fornecida - checar os erros
     //
-    if (ultimo)
-    {
+    if (ultimo) {
         arquivo = fopen("fake", "rb");
         if (arquivo == NULL)
             exit(EXIT_FAILURE);
@@ -247,8 +244,7 @@ main(int argc, char **argv)
     // salvar a estrutura no arquivo "fake" se a opção "-s" foi fornecida -     
     // checar os erros
     //
-    if (save)
-    {
+    if (save) {
         arquivo = fopen("fake", "wb");
         if (arquivo == NULL)
             exit(EXIT_FAILURE);
@@ -262,18 +258,15 @@ main(int argc, char **argv)
     // abrir o firefox no site mintemail.com se a opção e foi fornecida - 
     // checar os erros - utilizar a função wait()
     //
-    if (email)
-    {
+    if (email) {
         pid = fork();
-        if (pid == 0)
-        {
+        if (pid == 0) {
             printf("Abrindo e-mail.\n");
             exec = execl("/usr/bin/firefox", "firefox", 
                          "www.mintemail.com", NULL);
             if (exec == -1)
                 perror ("execl");
-        }
-        else if (pid > 1)
+        } else if (pid > 1)
             exit(EXIT_SUCCESS);
         else
             exit(EXIT_FAILURE);
