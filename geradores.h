@@ -4,7 +4,8 @@
 //
 // definição de enumeração para armazenar a bandeira do cartão gerado
 //
-enum bandeira {
+enum bandeira 
+{
     VISA, MASTER, DINERS, DISCOVER, AMERICAN
 };
 
@@ -13,7 +14,8 @@ extern enum bandeira credito;
 //
 // definição de enumeração para armazenar o estado do CEP gerado
 //
-enum estado {
+enum estado 
+{
     SP, SI, RJ, ES, MG, BA, SE, PE, AL, PB, RN, CE, PI, MA, PA, AM, AC, AP,
     RR, GO, TO, MT, MS, RO, DF, PR, SC, RS
 };
