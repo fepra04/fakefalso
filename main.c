@@ -12,7 +12,7 @@
 //             Criado:     26/10/2016
 //             Atualizado: 28/10/2016
 //
-//             Compilar:   ./makefile 
+//             Compilar:   make 
 //                         gcc -o ff main.c geradores.c
 //
 //             Implementar: validadores de números de CPF, RG, cartão de
