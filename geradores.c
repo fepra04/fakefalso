@@ -29,7 +29,8 @@ gera_cpf(int *cpf)
     int soma = 0;
     int resto = 0;
 
-    for (i = 0; i < 9; i++) {
+    for (i = 0; i < 9; i++) 
+    {
         cpf[i] = rand() % 10;
         soma += cpf[i] * (10 - i);
     }
@@ -65,7 +66,8 @@ gera_rg(int *rg)
     int soma = 0;
     int resto = 0;
 
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < 8; i++) 
+    {
         rg[i] = rand() % 10;
         soma += rg[i] * (2 + i);
     }
@@ -94,7 +96,8 @@ gera_cartao(int *cartao, int bandeira)
     int soma = 0;
     int resto = 0;
 
-    switch(bandeira) {
+    switch(bandeira) 
+    {
         case VISA: 
             cartao[0] = 4; 
             i = 1;
@@ -129,7 +132,8 @@ gera_cartao(int *cartao, int bandeira)
             break;
     }
 
-    for (; i < 15; i++) {
+    for (; i < 15; i++) 
+    {
         cartao[i] = rand() % 10;
         if (i % 2)
             soma += cartao[i];
@@ -167,7 +171,8 @@ gera_cep(int *cep, int estado)
 {
     int i;
 
-    switch(estado) {
+    switch(estado) 
+    {
         case SP:
             cep[0] = 0;
             cep[1] = 1;
