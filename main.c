@@ -47,7 +47,8 @@ main(int argc, char **argv)
     //
     // definição da estrutura para armazenar os dados gerados formatados
     //
-    struct pessoa {     
+    struct pessoa 
+    {     
         char cpf[15];
         char rg[13];
         char cartao[20];
@@ -70,8 +71,8 @@ main(int argc, char **argv)
 
     FILE *arquivo;       // ponteiro para a estrutura FILE para I/O
 
-    bool email = false;  // define se o e-mail será aberto
-    bool save = false;   // define se os dados serão salvos
+    bool email  = false; // define se o e-mail será aberto
+    bool save   = false; // define se os dados serão salvos
     bool ultimo = false; // define se os últimos dados salvos serão carregados
 
     //
@@ -85,7 +86,8 @@ main(int argc, char **argv)
     //
     // vetores de caracteres para armazenar os dados gerados formatados
     //
-      char cpf_formatado[] = {
+      char cpf_formatado[] = 
+      {
         ESPACO, 
         ESPACO, 
         ESPACO, 
@@ -103,7 +105,8 @@ main(int argc, char **argv)
         '\0'
     }; 
     
-    char rg_formatado[] = {
+    char rg_formatado[] = 
+    {
         ESPACO, 
         ESPACO, 
         PONTO, 
@@ -119,7 +122,8 @@ main(int argc, char **argv)
         '\0'
     };
   
-    char cartao_formatado[] = {
+    char cartao_formatado[] = 
+    {
         ESPACO,
         ESPACO,
         ESPACO,
@@ -142,7 +146,8 @@ main(int argc, char **argv)
         '\0'
     };
 
-    char cep_formatado[] = {
+    char cep_formatado[] = 
+    {
         ESPACO,
         ESPACO,
         ESPACO,
@@ -160,8 +165,10 @@ main(int argc, char **argv)
     // laço para função getopt() processar as opções da linha de comando
     // escrever funções para checar as opções 'b' e 'r'
     //
-    while ((opt = getopt(argc, argv, ":b:r:esu")) != -1) {
-        switch (opt) {
+    while ((opt = getopt(argc, argv, ":b:r:esu")) != -1) 
+    {
+        switch (opt) 
+        {
             case 'b':                    // enum credito
                 credito = atoi(optarg);
                 break;
@@ -244,7 +251,8 @@ main(int argc, char **argv)
     // salvar a estrutura no arquivo "fake" se a opção "-s" foi fornecida -     
     // checar os erros
     //
-    if (save) {
+    if (save) 
+    {
         arquivo = fopen("fake", "wb");
         if (arquivo == NULL)
             exit(EXIT_FAILURE);
@@ -258,15 +266,18 @@ main(int argc, char **argv)
     // abrir o firefox no site mintemail.com se a opção e foi fornecida - 
     // checar os erros - utilizar a função wait()
     //
-    if (email) {
+    if (email) 
+    {
         pid = fork();
-        if (pid == 0) {
+        if (pid == 0) 
+        {
             printf("Abrindo e-mail.\n");
             exec = execl("/usr/bin/firefox", "firefox", 
                          "www.mintemail.com", NULL);
             if (exec == -1)
                 perror ("execl");
-        } else if (pid > 1)
+        } 
+        else if (pid > 1)
             exit(EXIT_SUCCESS);
         else
             exit(EXIT_FAILURE);
